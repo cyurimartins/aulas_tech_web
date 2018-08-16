@@ -1,0 +1,50 @@
+<html>
+<head>
+    <meta charset="utf-8"> <!-- ou latinl -->
+    <script>
+        function somar() {
+            var v1 = document.getElementById("v1");
+            //console.log(v1.value);
+            var v2 = document.getElementById("v2");
+            //console.log(v2.value);
+            var resultado = (parseFloat(v1.value)) + (parseFloat(v2.value));
+            //console.log(resultado);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function subtrair() {
+            var v1 = document.getElementById("v1");
+            var v2 = document.getElementById("v2");
+            var resultado = parseFloat(v1.value) - parseFloat(v2.value);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function dividir() {
+            var v1 = document.getElementById("v1");
+            var v2 = document.getElementById("v2");
+            var resultado = parseFloat(v1.value) / parseFloat(v2.value);
+            document.getElementById("resultado").innerHTML = resultado;            
+        }
+
+        function multiplicar() {
+            var v1 = document.getElementById("v1");
+            var v2 = document.getElementById("v2");
+            var resultado = parseFloat(v1.value) * parseFloat(v2.value);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>PROJETO CALCULADORA - AULA 01</h1>
+    <p>Valor 1: <input type=number id=v1 value=0> </p>
+    <p>Valor 2: <input type=number id=v2 value=0> </p>
+    <br>
+    <button onclick="somar()">SOMA</button> 
+    <button onclick="subtrair()">SUBTRACAO</button>
+    <button onclick="dividir()">DIVISAO</button> 
+    <button onclick="multiplicar()">MULTIPLICACAO</button>
+    <hr>
+    <h2>Resultado</h2>
+    <h2 id=resultado></h2>
+</body>
+</html>
