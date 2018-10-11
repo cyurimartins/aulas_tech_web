@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+       
+    <title>Clínica vai com Deus</title>
+    <script src="json.js"></script>
+    <script>
+    $( document ).ready(function() {
+      var html;
+      $.each(objeto, function( index, value ) {
+html='<option value="'+value.nome+'">'+value.nome+'</option>';
+		  if (value.posicionamento=="triagem") {
+			  $("#triagem").append(html);
+		  }else if (value.posicionamento=="geral") {
+			  $("#geral").append(html);
+		  }else if (value.posicionamento=="emergencia") {
+			  $("#emergencia").append(html);
+		  }
+   	  });//fim each
+   	  
+   	   $("#btgeral").click(function(){
+		 var cliente = $("#triagem option:selected").val();
+   html='<option value="'+cliente+'">'+cliente+'</option>';
+		 $("#geral").append(html);
+		 
+	   });
+   	 
+    });
+    </script>
+    
+  </head>
+  <body>
+    <h1>Clínica vai com Deus</h1>
+    
+    <div class=container>
+		<div class=row>
+			<div class=col>
+				<h1>Triagem</h1>
+				<select id=triagem multiple>
+					
+				</select>
+			</div>
+			<div class=col>
+				<button id=btgeral class="btn btn-primary">
+					Clínico Geral
+				</button>
+				<br><br>
+				<button id=btemergencia class="btn btn-danger">
+					Emergência
+				</button>
+			</div>
+			<div class=col>
+				<h1>Clínico Geral</h1>
+				<select id=geral multiple>
+					
+				</select>
+				<br>
+				<h1>Emergência</h1>
+				<select id=emergencia multiple>
+					
+				</select>
+			</div>
+			<div class=col>
+				<button id=btalta class="btn btn-success">
+					Alta
+				</button>
+			</div>
+			<div class=col>
+				<h1>Alta</h1>
+				<select id=alta multiple>
+					
+				</select>
+			</div>
+		</div><!--row -->
+    </div><!--container -->
+  </body>
+</html>
